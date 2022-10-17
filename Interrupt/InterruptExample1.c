@@ -3,7 +3,7 @@
 #include "lpc17xx_libcfg_default.h"   
 #include "lpc17xx_pinsel.h"
 
-uint32_t pos = 0x04;
+uint32_t pos;
 
 void Delay(long d_t)
 {
@@ -14,7 +14,7 @@ void Delay(long d_t)
 void EINT0_IRQHandler(void)
 {                   
   	LPC_SC->EXTINT = 0x01; 
-	GPIO_SetValue(2, pos);
+	pos = 0x04;
 }
  
 int main (void) 
@@ -48,7 +48,7 @@ int main (void)
 	 
    while(1)
   {   
-		GPIO_ClearValue(2, 0x0000007C);
+		GPIO_SetValue(2, pos);
 		Delay(600000);
   }
 }
