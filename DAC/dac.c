@@ -1,4 +1,5 @@
 #include "lpc17xx_dac.h"
+#include "lpc17xx_uart.h"
 #include "lpc17xx_pinsel.h"
 #include "lpc17xx_libcfg_default.h"
 #include "debug_frmwrk.h"
